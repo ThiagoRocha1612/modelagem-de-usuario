@@ -1,8 +1,8 @@
-public class Manager {
+public non-sealed class Manager extends Employee{
 
     private String login;
 
-    private String passaword;
+    private String password;
 
     private double commission;
 
@@ -15,11 +15,11 @@ public class Manager {
     }
 
     public String getPassaword() {
-        return passaword;
+        return password;
     }
 
     public void setPassaword(String passaword) {
-        this.passaword = passaword;
+        this.password = passaword;
     }
 
     public double getCommission() {
