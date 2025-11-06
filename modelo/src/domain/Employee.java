@@ -27,21 +27,10 @@ public sealed abstract class Employee permits Manager, Salesman {
     public Employee() {
     }
 
-    public String getCode() {
+    public String getCode() {return code;}
+    public void setCode(String code) {this.code = code;}
 
-        return code;
-    }
-
-    public void setCode(String code) {
-
-        this.code = code;
-    }
-
-    public String getName() {
-
-        return name;
-    }
-
+    public String getName() {return name;}
     public void setName(String name) {
         this.name = name;
     }
@@ -49,7 +38,6 @@ public sealed abstract class Employee permits Manager, Salesman {
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -57,7 +45,6 @@ public sealed abstract class Employee permits Manager, Salesman {
     public int getAge() {
         return age;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
@@ -65,15 +52,17 @@ public sealed abstract class Employee permits Manager, Salesman {
     public double getSalary() {
         return salary;
     }
-
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
     public abstract double getfullSalary();
-
     public double getfullSalary(double extra){
         return this.getfullSalary() + extra;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Code: %s | Name: %s | Salary: %.2f", code, name, salary);
+    }
 }
