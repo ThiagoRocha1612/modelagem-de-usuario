@@ -1,6 +1,6 @@
 package domain;
 
-public non-sealed class Manager extends Employee{
+public non-sealed class Manager extends Employee {
 
     private String login;
 
@@ -22,9 +22,12 @@ public non-sealed class Manager extends Employee{
         this.commission = commission;
     }
 
+    public Manager() {
+    }
+
     @Override
     public String getCode() {
-        return "MN" + this.code;
+        return "MN" + super.getCode();
     }
 
     @Override
@@ -32,14 +35,10 @@ public non-sealed class Manager extends Employee{
         return this.salary + this.commission;
     }
 
-    public Manager() {
-    }
-
 
     public String getLogin() {
         return login;
     }
-
     public void setLogin(String login) {
         this.login = login;
     }
@@ -47,7 +46,6 @@ public non-sealed class Manager extends Employee{
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String passaword) {
         this.password = password;
     }
@@ -55,8 +53,14 @@ public non-sealed class Manager extends Employee{
     public double getCommission() {
         return commission;
     }
-
     public void setCommission(double commission) {
         this.commission = commission;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                String.format(" | Login: %s | Commission: %.2f", login, commission);
+
     }
 }
