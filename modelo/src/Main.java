@@ -6,51 +6,40 @@ public class Main {
 
     public static void main(String[] args){
 
-        printEmployee(new Manager());
-        printEmployee(new Salesman());
+        printEmployee(createManager());
+        printEmployee(createSalesman());
 
     }
-    public static void printEmployee(Employee employee){
 
-        System.out.printf("=======%s=======\n", employee.getClass().getCanonicalName());
-
-        switch (employee){
-            case Manager manager -> {
-                manager.setCode("123");
-                manager.setName("carlos");
-                manager.setSalary(5000);
-                manager.setLogin("login");
-                manager.setPassword("12345");
-                manager.setCommission(1200);
-
-
-                System.out.println(manager.getCode());
-                System.out.println(manager.getName());
-                System.out.println(manager.getSalary());
-                System.out.println(manager.getLogin());
-                System.out.println(manager.getPassword());
-                System.out.println(manager.getCommission());
-            }
-            case Salesman salesman -> {
-                salesman.setCode("456");
-                salesman.setName("lucas");
-                salesman.setSalary(2800);
-                salesman.setPercentPerSold(10);
-                salesman.setSoldAmount(1000);
-
-                System.out.println(salesman.getCode());
-                System.out.println(salesman.getName());
-                System.out.println(salesman.getSalary());
-                System.out.println(salesman.getPercentPerSold());
-                System.out.println(salesman.getSoldAmount());
-
-
-            }
-
-        }
-        System.out.println(employee.getfullSalary(500));
-        System.out.println(employee.getfullSalary());
-        System.out.println("============");
+    private static Manager createManager(){
+        Manager manager = new Manager();
+        manager.setCode("123");
+        manager.setName("Carlos");
+        manager.setSalary(5000);
+        manager.setLogin("CarlosManager");
+        manager.setPassword("12345");
+        manager.setCommission(1200);
+        return manager;
     }
+
+    private static Salesman createSalesman() {
+        Salesman salesman = new Salesman();
+        salesman.setCode("456");
+        salesman.setName("Lucas");
+        salesman.setSalary(2800);
+        salesman.setPercentPerSold(10);
+        salesman.setSoldAmount(1000);
+        return salesman;
+    }
+
+    private static void printEmployee(Employee employee){
+
+        System.out.println("====== " + employee.getClass().getSimpleName() + " ======");
+        System.out.println(employee);
+        System.out.println("Full Salary + 500 bonus: " + employee.getfullSalary(500));
+        System.out.println("Full Salary: " + employee.getfullSalary());
+        System.out.println("==========================\n");
+    }
+
 
 }
