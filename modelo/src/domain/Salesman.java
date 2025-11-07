@@ -18,6 +18,9 @@ public non-sealed class Salesman extends Employee{
         this.soldAmount = soldAmount;
     }
 
+    public Salesman() {
+    }
+
     @Override
     public String getCode() {
         return "SL" + this.code;
@@ -28,13 +31,9 @@ public non-sealed class Salesman extends Employee{
         return this.salary + (soldAmount*percentPerSold)/100;
     }
 
-    public Salesman() {
-    }
-
     public double getPercentPerSold() {
         return percentPerSold;
     }
-
     public void setPercentPerSold(double percentPerSold) {
         this.percentPerSold = percentPerSold;
     }
@@ -42,8 +41,13 @@ public non-sealed class Salesman extends Employee{
     public double getSoldAmount() {
         return soldAmount;
     }
-
     public void setSoldAmount(double soldAmount) {
         this.soldAmount = soldAmount;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                String.format(" | Percent per Sold: %.2f%% | Sold Amount: %.2f", percentPerSold, soldAmount);
     }
 }
