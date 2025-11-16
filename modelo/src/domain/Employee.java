@@ -6,10 +6,6 @@ public sealed abstract class Employee permits Manager, Salesman {
 
     protected String name;
 
-    protected String address;
-
-    protected int age;
-
     protected double salary;
 
     public Employee(String code,
@@ -19,8 +15,6 @@ public sealed abstract class Employee permits Manager, Salesman {
                     double salary) {
         this.code = code;
         this.name = name;
-        this.address = address;
-        this.age = age;
         this.salary = salary;
     }
 
@@ -34,21 +28,7 @@ public sealed abstract class Employee permits Manager, Salesman {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getAddress() {
-        return address;
-    }
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-
+    
     public double getSalary() {
         return salary;
     }
