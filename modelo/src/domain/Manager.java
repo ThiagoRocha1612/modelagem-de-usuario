@@ -10,13 +10,13 @@ public non-sealed class Manager extends Employee {
 
     public Manager(String code,
                    String name,
-                   String address,
-                   int age,
                    double salary,
                    String login,
                    String password,
                    double commission) {
-        super(code, name, address, age, salary);
+    public Manager(String code, String name, double salary,
+                   String login, String password, double commission) {
+        super(code, name, salary);
         this.login = login;
         this.password = password;
         this.commission = commission;
@@ -32,7 +32,7 @@ public non-sealed class Manager extends Employee {
 
     @Override
     public double getfullSalary() {
-        return this.salary + this.commission;
+        return getSalary() + commission;
     }
 
 
@@ -46,7 +46,7 @@ public non-sealed class Manager extends Employee {
     public String getPassword() {
         return password;
     }
-    public void setPassword(String passaword) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
