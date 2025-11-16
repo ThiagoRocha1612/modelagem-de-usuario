@@ -8,12 +8,6 @@ public non-sealed class Manager extends Employee {
 
     private double commission;
 
-    public Manager(String code,
-                   String name,
-                   double salary,
-                   String login,
-                   String password,
-                   double commission) {
     public Manager(String code, String name, double salary,
                    String login, String password, double commission) {
         super(code, name, salary);
