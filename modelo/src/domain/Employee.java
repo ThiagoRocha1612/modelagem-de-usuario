@@ -10,8 +10,6 @@ public sealed abstract class Employee permits Manager, Salesman {
 
     public Employee(String code,
                     String name,
-                    String address,
-                    int age,
                     double salary) {
         this.code = code;
         this.name = name;
@@ -28,7 +26,7 @@ public sealed abstract class Employee permits Manager, Salesman {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public double getSalary() {
         return salary;
     }
